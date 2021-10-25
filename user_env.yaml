@@ -1,0 +1,15 @@
+---
+- name: add users
+  hosts: all
+  become: true
+  become_method: sudo
+  user: ec2-user
+  tasks:
+  - name: add users
+    ansible.builtin.user:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - ben
+    - john
+    - lisa
