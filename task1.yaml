@@ -1,0 +1,16 @@
+---
+# Task 1
+# Create an Ansible environment with bash command
+# Create a playbook to install MariaDB server on ubuntu, and add users to amazon instances:
+# Bob
+# Ben
+# Lisa
+# Katty
+# with their ssh-keys generated for future use. MariaDB should only be restarted on ubuntu servers if the package is installed.
+# Each user should get the following csv file in their home directories https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv
+#
+#
+
+
+name: task 1
+
