@@ -1,0 +1,6 @@
+---
+- name: track ansible node
+  hosts: all
+  tasks:
+    - name: leaving a mark on ansible nodes
+    command: "touch /tmp/ansible_was_here"
