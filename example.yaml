@@ -1,0 +1,13 @@
+---
+# first example
+
+- name: install packages
+  hosts: localhost
+  become: true
+  become_method: sudo
+  user: ec2-user
+  tasks:
+  - name: install telnet
+    ansible.builtin.package:
+      name: telnet
+      state: latest
