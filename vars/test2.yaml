@@ -1,0 +1,6 @@
+---
+# test playbook
+testing: 
+  - ben
+  - john
+  - lisa

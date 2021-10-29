@@ -1,0 +1,23 @@
+--- # Connection block
+# Ansible playbook task1.yaml
+- name: homework task1
+  hosts: localhost
+  become: true
+  become_method: sudo
+  user: ec2-user
+  tasks: 
+  - name: Install MariaDB
+    # when: ( ansible_facts['distribution'] == "Ubuntu" )
+    package:
+      name: mariadb
+      state: present
+    notify:
+    - Start DB server
+
+
+  - name: Start DB server
+    # when: ( ansible_facts['distribution'] == "Ubuntu" )
+    systemd: 
+      name: mariadb 
+      state: restarted
+      enabled: true

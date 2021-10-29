@@ -4,12 +4,15 @@
   become: true
   become_method: sudo
   user: ec2-user
+  vars_files:
+    - /home/ec2-user/ansible/vars/test2.yaml
+      
   tasks:
   - name: add users
     ansible.builtin.user:
-      name: "{{ item }}"
+      name: "{{ vars_files }}"
       state: present
-    with_items:
-    - ben
-    - john
-    - lisa
+    # with_items:
+    # - ben
+    # - john
+    # - lisa

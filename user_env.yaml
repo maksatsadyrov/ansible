@@ -8,7 +8,7 @@
   - name: add users
     ansible.builtin.user:
       name: "{{ item }}"
-      state: present
+      state: absent
     with_items:
     - ben
     - john
