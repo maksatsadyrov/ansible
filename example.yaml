@@ -8,6 +8,6 @@
   user: ec2-user
   tasks:
   - name: install telnet
-    ansible.builtin.package:
+    ansible.builtin.shell:
       name: telnet
       state: absent
