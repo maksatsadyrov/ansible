@@ -1,18 +1,13 @@
+# ansible-playbook IAAC/ec2.yaml 
 ---
-- name: add users
+- name: Add ec2
   hosts: localhost
-  become: true
-  become_method: sudo
-  user: ec2-user
-  vars_files:
-    - /home/ec2-user/ansible/vars/test2.yaml
-      
   tasks:
-  - name: add users
-    ansible.builtin.user:
-      name: "{{ vars_files }}"
-      state: present
-    # with_items:
-    # - ben
-    # - john
-    # - lisa
+  # Basic provisioning example
+  - amazon.aws.ec2:
+      key_name: laptop
+      instance_type: t2.micro
+      image: ami-074cce78125f09d61
+      wait: yes
+      count: 3
+      region: us-east-2
